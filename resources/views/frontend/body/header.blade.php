@@ -1,64 +1,76 @@
+  
 @php
 
 $route = Route::current()->getName();
 @endphp
 
-<header>
-    <section class="hero" id="hero">
-        <div class="heroText">
-            <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
-                Nomad Force
-            </h1>
+   <header>
+            <div id="sticky-header" class="menu__area transparent-header">
+                <div class="container custom-container">
+                    <div class="row">
+                        <div class="col-12">
+    <div class="mobile__nav__toggler"><i class="fas fa-bars"></i></div>
+    <div class="menu__wrap">
+    <nav class="menu__nav">
+    <div class="logo">
+    <a href="index.html" class="logo__black"><img src="{{ asset('frontend/assets/img/logo/logo_black.png') }}" alt=""></a>
+    <a href="index.html" class="logo__white"><img src="{{ asset('frontend/assets/img/logo/logo_white.png') }}" alt=""></a>
+    </div>
+    <div class="navbar__wrap main__menu d-none d-xl-flex">
+    <ul class="navigation">
 
-            <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                create a great video for your <strong class="custom-underline">website</strong>
-            </p>
-        </div>
+    <li class="{{ ($route == 'home')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
 
-        <div class="videoWrapper">
-            <video autoplay="" loop="" muted="" class="custom-video" poster="videos/792bd98f3e617786c850493560e11c45.jpg">
-                <source src="videos/814dc43e870597176cad645798825c03.mp4" type="video/mp4">
+    <li class="{{ ($route == 'home.about')? 'active' : '' }}"><a href="{{ route('home.about') }}">About</a></li>
 
-                Your browser does not support the video tag.
-            </video>
-        </div>
 
-        <div class="overlay"></div>
-    </section>
+    <li><a href="services-details.html">Services</a></li>
 
-    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <strong>Nomad Force</strong>
-            </a>
+    <li class="{{ ($route == 'home.portfolio') ? 'active' : '' }}"><a href="{{ route('home.portfolio') }}">Portfolio</a>
+         
+    </li>    
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="{{ ($route == 'home.blog') ? 'nav-item active' : 'nav-item' }}">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
-                    </li>
+    <li class="{{ ($route == 'home.blog') ? 'active' : '' }}"><a href="{{ route('home.blog') }}">Our Blog</a>
+        
+    </li>
+    <li class="{{ ($route == 'contact.me') ? 'active' : '' }}"><a href="{{ route('contact.me') }}">contact me</a></li>
+    </ul>
+    </div>
 
-                    <li class="{{ ($route == 'home.blog') ? 'nav-item active' : 'nav-item' }}">
-                        <a class="nav-link" href="{{ route('home') }}">Our Studio</a>
-                    </li>
 
-                    <li class="{{ ($route == 'home.blog') ? 'nav-item active' : 'nav-item' }}">
-                        <a class="nav-link" href="{{ route('home') }}">Portfolio</a>
-                    </li>
 
-                    <li class="{{ ($route == 'home.blog') ? 'nav-item active' : 'nav-item' }}">
-                        <a class="nav-link" href="{{ route('home') }}>News & Events</a>
-                    </li>
 
-                    <li class=" {{ ($route == 'home.blog') ? 'nav-item active' : 'nav-item' }}">
-                            <a class="nav-link" href="{{ route('home') }}>Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div class="header__btn d-none d-md-block">
+    <a href="contact.html" class="btn">Contact me</a>
+    </div>
     </nav>
-
-</header>
+    </div>
+    <!-- Mobile Menu  -->
+    <div class="mobile__menu">
+    <nav class="menu__box">
+    <div class="close__btn"><i class="fal fa-times"></i></div>
+    <div class="nav-logo">
+    <a href="index.html" class="logo__black"><img src="assets/img/logo/logo_black.png" alt=""></a>
+    <a href="index.html" class="logo__white"><img src="assets/img/logo/logo_white.png" alt=""></a>
+    </div>
+    <div class="menu__outer">
+    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+    </div>
+    <div class="social-links">
+    <ul class="clearfix">
+    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+    <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+    <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+    </ul>
+    </div>
+    </nav>
+    </div>
+    <div class="menu__backdrop"></div>
+    <!-- End Mobile Menu -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </header>

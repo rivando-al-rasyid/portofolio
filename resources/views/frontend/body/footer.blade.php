@@ -1,42 +1,63 @@
-<footer class="site-footer">
-    <div class="container">
-        <div class="row">
+@php
 
-            <div class="col-12">
-                <h5 class="text-white">
-                    <i class="bi-geo-alt-fill me-2"></i>
-                    State of Rio de Janeiro, Brazil
-                </h5>
+$allfooter = App\Models\Footer::find(1);
 
-                <a href="mailto:info@company.com" class="custom-link mt-3 mb-5">
-                    info@company.com
-                </a>
+@endphp
+
+
+ <footer class="footer">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-4">
+                        <div class="footer__widget">
+                            <div class="fw-title">
+                                <h5 class="sub-title">Contact us</h5>
+                                <h4 class="title">{{ $allfooter->number }}</h4>
+                            </div>
+                            <div class="footer__widget__text">
+                                <p>{{ $allfooter->short_description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer__widget">
+                            <div class="fw-title">
+                                <h5 class="sub-title">my address</h5>
+                                <h4 class="title">AUSTRALIA</h4>
+                            </div>
+                            <div class="footer__widget__address">
+                                <p>{{ $allfooter->adress }}</p>
+                                <a href="mailto:{{ $allfooter->email }}" class="mail">{{ $allfooter->email }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer__widget">
+                            <div class="fw-title">
+                                <h5 class="sub-title">Follow me</h5>
+                                <h4 class="title">socially connect</h4>
+                            </div>
+                            <div class="footer__widget__social">
+                                <p>Lorem ipsum dolor sit amet enim. <br> Etiam ullamcorper.</p>
+    <ul class="footer__social__list">
+        <li><a href="{{ $allfooter->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="{{ $allfooter->twitter }}"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright__wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright__text text-center">
+                                <p>{{ $allfooter->copyright }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-6">
-                <class="copyright-text mb-0">Copyright © Nomad Force 2021
-
-                    <br><br>Design: <a href="https://templatemo.com/page/1" target="_parent">TemplateMo</a><br><br>
-
-                    Distributed By: <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-                    </p>
-
-            </div>
-
-            <div class="col-lg-3 col-5 ms-auto">
-                <ul class="social-icon">
-                    <li><a href="#" class="social-icon-link bi-facebook"></a></li>
-
-                    <li><a href="#" class="social-icon-link bi-twitter"></a></li>
-
-                    <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
-
-                    <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                    <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-                </ul>
-            </div>
-
-        </div>
-        </section>
-</footer>
+        </footer>
